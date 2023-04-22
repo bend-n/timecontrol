@@ -1,5 +1,6 @@
 @tool
 extends Button
+class_name TimeButton
 
 @export var time := {
 	"hour": 12,
