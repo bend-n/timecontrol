@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://p3gdhr2kd0m8"]
+
+[ext_resource type="PackedScene" uid="uid://drw0w44wonai8" path="res://addons/@bendn/timecontrol/timebox.tscn" id="1_gfxw5"]
+[ext_resource type="Theme" uid="uid://b4km62j3u3meo" path="res://them.tres" id="1_n048j"]
+[ext_resource type="Script" path="res://addons/@bendn/timecontrol/timebutton.gd" id="3_rj8cl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n048j")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="timebox" parent="CenterContainer/HBoxContainer/PanelContainer" instance=ExtResource("1_gfxw5")]
+layout_mode = 2
+
+[node name="timebutton" type="Button" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "12:00 PM"
+script = ExtResource("3_rj8cl")

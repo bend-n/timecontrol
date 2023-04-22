@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b4km62j3u3meo"]
+
+[ext_resource type="Texture2D" uid="uid://cgv1h1nr73h70" path="res://dots.png" id="1_tqco8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uccrj"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+texture = ExtResource("1_tqco8")
+
+[sub_resource type="SystemFont" id="SystemFont_jr147"]
+font_names = PackedStringArray("Ubuntu Mono")
+subpixel_positioning = 0
+
+[resource]
+default_font = SubResource("SystemFont_jr147")
+default_font_size = 50
+VSeparator/styles/separator = SubResource("StyleBoxTexture_uccrj")

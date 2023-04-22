@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://drw0w44wonai8"]
+
+[ext_resource type="Script" path="res://addons/@bendn/timecontrol/timebox.gd" id="1_x0q77"]
+[ext_resource type="Script" path="res://addons/@bendn/timecontrol/hour.gd" id="2_chwoo"]
+[ext_resource type="Script" path="res://addons/@bendn/timecontrol/minute.gd" id="3_2xfs8"]
+
+[node name="timebox" type="HBoxContainer"]
+script = ExtResource("1_x0q77")
+
+[node name="hour" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+script = ExtResource("2_chwoo")
+selection = 12
+
+[node name="sep" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="minute" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 2
+script = ExtResource("3_2xfs8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[connection signal="selection_changed" from="hour" to="." method="_on_hour_selection_changed"]
+[connection signal="selection_changed" from="minute" to="." method="_on_minute_selection_changed"]
