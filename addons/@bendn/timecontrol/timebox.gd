@@ -9,7 +9,6 @@ var time := {
 func _changed():
 	time_changed.emit()
 
-
 signal time_changed(time: Dictionary)
 
 func _on_hour_selection_changed(hour: int) -> void:

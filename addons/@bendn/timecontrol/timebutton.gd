@@ -9,13 +9,12 @@ extends Button
 var timebox: TimeBox
 var panel: PopupPanel
 
+signal time_changed(time: Dictionary)
+
 func set_time(t: Dictionary = time) -> void:
 	text = TimeBox.fmt_dict_12h(time)
 	time = t
-
-## this is a required internal object
-func get_timebox() -> TimeBox:
-	return timebox
+	time_changed.emit(time)
 
 func _ready() -> void:
 	text = TimeBox.fmt_dict_12h(time)
