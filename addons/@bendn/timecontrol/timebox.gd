@@ -4,12 +4,17 @@ class_name TimeBox
 var time := {
 	"hour": 12,
 	"minute": 00,
-}
+}: set = set_time
 
 func _changed():
 	time_changed.emit()
 
 signal time_changed(time: Dictionary)
+
+func set_time(t: Dictionary) -> void:
+	time = t
+	%hour.selection = t.hour
+	%minute.selection = t.minute
 
 func _on_hour_selection_changed(hour: int) -> void:
 	time.hour = hour

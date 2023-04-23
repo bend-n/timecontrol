@@ -15,6 +15,7 @@ signal time_changed(time: Dictionary)
 func set_time(t: Dictionary = time) -> void:
 	time = t
 	text = TimeBox.fmt_dict_12h(time)
+	timebox.time = t
 	time_changed.emit(time)
 
 func _ready() -> void:
